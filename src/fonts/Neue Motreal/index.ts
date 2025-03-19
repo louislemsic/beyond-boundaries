@@ -1,16 +1,13 @@
 import localFont from "next/font/local";
 
-export const neueMontreal = {
-  bold: localFont({
-    src: "./NeueMotreal-Bold.otf",
-    display: "swap",
-    variable: "--font-neue-montreal-bold",
-  }),
-  light: localFont({
-    src: "./NeueMotreal-Light.otf",
-    display: "swap",
-    variable: "--font-neue-montreal-light",
-  }),
-}
+export const neueMontrealBold = localFont({
+  src: "./NeueMontreal-Bold.otf",
+  display: "swap",
+  variable: "--font-neue-montreal-bold",
+});
 
-export default neueMontreal;
+export const neueMontrealLight = localFont({
+  src: "./NeueMontreal-Light.otf",
+  display: "swap",
+  variable: "--font-neue-montreal-light",
+});

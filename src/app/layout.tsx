@@ -1,35 +1,43 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type React from "react"
+import type { Metadata } from "next"
+import { neueMontrealBold, neueMontrealLight } from "@/fonts/Neue Motreal"
+import "./globals.css"
 
 export const metadata: Metadata = {
-    manifest: "/manifest.json",
-    title: "Next.js PWA",
-    description: "Welcome to the Next.js Progressive Web App!",
+  manifest: "/manifest.json",
+  applicationName: "Beyond Boundaries",
+  generator: "Next.js",
+	keywords: ['hiv', 'help', 'aids', 'care', 'beyond', 'boundaries'],
+	openGraph: {
+		images: {
+			url: 'https://i.imgur.com/3UbMCzl.png',
+			type: 'image/png',
+			width: 1200,
+			height: 630,
+		},
+		type: 'website',
+		siteName: 'Beyond Boundaries',
+		url: 'https://beyondboundaries.vercel.app',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		images: {
+			url: 'https://i.imgur.com/3UbMCzl.png',
+			type: 'image/png',
+			width: 1200,
+			height: 630,
+		},
+	},
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${neueMontrealBold.variable} ${neueMontrealLight.variable}`}>{children}</body>
     </html>
-  );
+  )
 }
