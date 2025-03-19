@@ -1,17 +1,58 @@
 {
-    "name": "Next.js PWA",
-    "short_name": "NextPWA",
-    "description": "Welcome to the Next.js Progressive Web App template repository!",
-    "icons": [
-        {
-          "src": "/icon.svg",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        }
-      ],
-    "theme_color": "#FFFFFF",
-    "background_color": "#FFFFFF",
-    "start_url": "/",
-    "display": "standalone"
+  "name": "Beyond Boundaries",
+  "short_name": "Beyond Boundaries",
+  "description": "Beyond myths, beyond boundaries—get the truth about HIV. Reliable, science-backed information about HIV to combat misinformation and promote awareness.",
+  
+  "icons": [
+    {
+      "src": "/icons/maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#F6E9DE",
+  "background_color": "#E22226",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "screenshots": [
+    {
+      "src": "/images/screenshots/1.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Learn the truths about HIV."
+    },
+    {
+      "src": "/images/screenshots/2.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Seek professional help easily."
+    },
+    {
+      "src": "/images/screenshots/3.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Watch videos to be more informed"
+    }
+  ]
 }
