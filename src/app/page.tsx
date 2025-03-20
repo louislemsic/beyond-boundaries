@@ -1,46 +1,217 @@
-import Image from "next/image";
-import { Instagram, Facebook, GanttChart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Footer from "@/components/Footer";
+"use client";
 
-export default function TemporaryPage() {
+import { useState } from "react";
+import Link from "next/link";
+import { MapPin } from "lucide-react"
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
+import VideoPlayer from "@/components/VideoPlayer";
+
+const videos = [
+  {
+    id: 1,
+    title: "Understanding HIV: The Basics",
+    description:
+      "Learn about what HIV is, how it affects the body, and the current state of HIV treatment and prevention.",
+    videoSrc: "/videos/1.mp4",
+  },
+  {
+    id: 2,
+    title: "Fact Check with Gen Z",
+    description:
+      "Young adults discuss common misconceptions about HIV and fact-check popular beliefs about the virus.",
+    videoSrc: "/videos/2.mp4",
+  },
+  {
+    id: 3,
+    title: "Gen-Z Meets PLHIV",
+    description:
+      "A powerful conversation between Gen Z individuals and people living with HIV, breaking down stigma through dialogue.",
+    videoSrc: "/videos/3.mp4",
+  },
+  {
+    id: 4,
+    title: "HIV Support Services",
+    description: "An overview of the support services available for people living with HIV and how to access them.",
+    videoSrc: "/videos/4.mp4",
+  },
+  {
+    id: 5,
+    title: "Breaking the Stigma",
+    description: "Stories from individuals who are working to break the stigma surrounding HIV in their communities.",
+    videoSrc: "/videos/5.mp4",
+  },
+  {
+    id: 6,
+    title: "HIV Prevention: Modern Approaches",
+    description:
+      "Learn about modern HIV prevention methods including PrEP, PEP, and other strategies to reduce transmission.",
+    videoSrc: "/videos/6.mp4",
+  },
+];
+
+// Testing centers data
+const testingCenters = [
+  {
+    name: "City Health Department",
+    address: "123 Main Street, Downtown",
+    phone: "(555) 123-4567",
+    hours: "Mon-Fri: 9am-5pm",
+  },
+  {
+    name: "Community Health Clinic",
+    address: "456 Park Avenue, Midtown",
+    phone: "(555) 987-6543",
+    hours: "Mon-Sat: 8am-8pm",
+  },
+  {
+    name: "University Medical Center",
+    address: "789 College Road, University District",
+    phone: "(555) 456-7890",
+    hours: "24/7 Testing Available",
+  },
+];
+
+export default function Home() {
+  const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false)
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+
+  const openVideoPlayer = (index: number) => {
+    setCurrentVideoIndex(index)
+    setIsVideoPlayerOpen(true)
+  }
+
+  const handleNextVideo = () => {
+    if (currentVideoIndex < videos.length - 1) {
+      setCurrentVideoIndex(currentVideoIndex + 1)
+    } else {
+      // Loop back to the first video
+      setCurrentVideoIndex(0)
+    }
+  }
+
   return (
-    <>
-      <div className="relative min-h-screen w-full bg-bc-1 flex flex-col items-center justify-center overflow-hidden">
-        {/* Large logo at bottom left with opacity */}
-        <div className="absolute bottom-0 left-0 h-[80%] w-auto opacity-5 -mb-40 -ml-32">
-          <Image
-            src="/svgs/logo.svg"
-            alt="Logo"
-            className="h-full w-auto"
-            width={100}
-            height={100}
-          />
+    <main className="min-h-screen">
+      {/* Video Player Modal */}
+      <VideoPlayer
+        isOpen={isVideoPlayerOpen}
+        onClose={() => setIsVideoPlayerOpen(false)}
+        videoSrc={videos[currentVideoIndex].videoSrc}
+        title={videos[currentVideoIndex].title}
+        description={videos[currentVideoIndex].description}
+        onNext={handleNextVideo}
+      />
+
+      {/* Navigation Bar */}
+      <NavBar />
+
+      {/* Header Section with Video Background */}
+      <header className="relative text-white">
+        {/* Video Background with Red Overlay - Contained within header */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[#e22226] bg-opacity-80 z-10"></div>
+          <video className="absolute inset-0 w-full h-full object-cover scale-125" autoPlay muted loop playsInline>
+            <source src="/videos/1.mp4" type="video/mp4" />
+          </video>
         </div>
 
-        {/* Center content */}
-        <div className="z-10 text-center px-4 max-w-md">
-          <h1 className="text-4xl font-extrabold mb-6 text-bc-2">Oof, talk about bad timing.</h1>
-          <p className="text-lg font-extralight mb-6 text-bc-2">
-            We are very sorry about this, we&apos;re currently improving our website to serve you better. 
-            Please come back again at another time.
+        {/* Content on top of video */}
+        <div className="relative z-20">
+          {/* Hero Section */}
+          <div className="container mx-auto px-4 py-20 flex justify-center items-center">
+            <div className="text-center max-w-3xl">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">Let's break the stigma about HIV together</h1>
+              <p className="text-lg mb-4">
+                Here at Beyond Boundaries, we provide a platform to understand HIV and its support programs better.
+              </p>
+              <p className="text-lg mb-8">Watch our latest video about HIV by clicking the button below</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link
+                  href="/videos"
+                  className="border border-white rounded-full px-6 py-3 font-medium hover:bg-white hover:text-[#e22226] transition-colors text-center"
+                >
+                  Browse Videos
+                </Link>
+                <button
+                  onClick={() => openVideoPlayer(0)}
+                  className="bg-white text-[#e22226] px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors"
+                >
+                  Watch Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+      {/* Curved White Section */}
+      <div className="bg-white relative">
+        {/* Curved red section */}
+        <div className="absolute top-0 left-0 right-0 h-16 bg-[#e22226] rounded-b-[50%_100%]"></div>
+
+        {/* Beyond Boundaries Section - Added more space on top */}
+        <div className="container mx-auto px-4 pt-36 pb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Beyond Boundaries.</h2>
+          <p className="max-w-3xl mx-auto text-center mb-20">
+            An academic exploration that utilized a combination of surveys, interviews, media analysis, and qualitative
+            research methods to provide valuable insights into the current situation of HIV, the effectiveness of
+            current HIV support initiatives, identify areas for improvement, and potentially contribute to a better
+            understanding of the peoples' perspectives on HIV and its support programs.
           </p>
 
-          {/* Social buttons */}
-          <div className="flex items-center justify-center gap-4">
-            <Button variant="outline" size="icon" aria-label="Instagram">
-              <Instagram className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="icon" aria-label="Facebook">
-              <Facebook className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="icon" aria-label="TikTok">
-              <GanttChart className="h-5 w-5" />
-            </Button>
+          {/* Get Tested Section */}
+          <div className="bg-gray-50 rounded-xl p-8 mb-16">
+            <h2 className="text-3xl font-bold text-center mb-6 text-[#e22226]">Get Tested</h2>
+            <p className="text-center max-w-3xl mx-auto mb-8">
+              Getting tested for HIV is quick, easy, and confidential. Knowing your status is the first step in taking
+              control of your health. Below are some locations where you can get tested in your area.
+            </p>
+
+            {/* Google Maps Placeholder */}
+            <div className="w-full h-[400px] bg-gray-200 rounded-lg mb-8 overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center bg-gray-300">
+                <div className="text-center">
+                  <MapPin size={48} className="mx-auto mb-4 text-[#e22226]" />
+                  <p className="text-gray-600">Google Maps would be integrated here</p>
+                  <p className="text-sm text-gray-500">Showing nearby HIV testing centers</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testing Centers List */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {testingCenters.map((center, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="font-bold text-lg mb-2">{center.name}</h3>
+                  <p className="text-gray-600 mb-1">
+                    <span className="font-medium">Address:</span> {center.address}
+                  </p>
+                  <p className="text-gray-600 mb-1">
+                    <span className="font-medium">Phone:</span> {center.phone}
+                  </p>
+                  <p className="text-gray-600">
+                    <span className="font-medium">Hours:</span> {center.hours}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center" id="get-tested">
+              <p className="mb-4">Want to learn more about the testing process and what to expect?</p>
+              <Link
+                href="/care-services"
+                className="bg-[#e22226] text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors inline-block"
+              >
+                Visit Our Care Services
+              </Link>
+            </div>
           </div>
         </div>
       </div>
+
       <Footer />
-    </>
+    </main>
   );
 }
