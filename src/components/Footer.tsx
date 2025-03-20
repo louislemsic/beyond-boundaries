@@ -21,13 +21,13 @@ export default function Footer() {
           {/* Using the wordmark SVG instead of text */}
           <div className="mb-2">
             <Link href="/" >
-                <Image
+              <Image
                 src="/svgs/wordmark.svg"
                 alt="Beyond Boundaries"
                 width={250}
                 height={100}
                 className="text-white max-w-full h-auto"
-                />
+              />
             </Link>
           </div>
           <p className="text-white/90 mt-4 text-sm italic">
@@ -38,13 +38,13 @@ export default function Footer() {
         </div>
 
         {/* Background decorative element */}
-        <div className="absolute right-0 top-0 w-auto h-full opacity-10 z-3">
+        <div className="absolute right-0 top-0 w-auto h-full z-3 opacity-80">
           <Image
-            src="/svgs/logo.svg"
+            src="/svgs/logo-red.svg"
             alt="Background Logo"
-            width={100}
+            width={700}
             height={100}
-            className="object-contain transform translate-x-1/4 translate-y-[-25%]"
+            className="object-contain transform translate-x-2 translate-y-[-24%]"
           />
         </div>
       </div>
