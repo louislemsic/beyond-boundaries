@@ -146,7 +146,7 @@ export default function Home() {
         <div className="relative z-20 h-full flex items-center">
           <div className="container mx-auto px-4 py-20">
             <div className="text-center max-w-3xl mx-auto text-white">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">Let's break the stigma about HIV together</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 ">Let's break the stigma about HIV together</h1>
               <p className="text-lg mb-4">
                 Here at Beyond Boundaries, we provide a platform to understand HIV and its support programs better.
               </p>
@@ -183,7 +183,7 @@ export default function Home() {
             />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-36">Beyond Boundaries.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-36 text-bc-1">Beyond Boundaries.</h2>
           <p className="max-w-3xl mx-auto text-center mb-20">
             An academic exploration that utilized a combination of surveys, interviews, media analysis, and qualitative
             research methods to provide valuable insights into the current situation of HIV, the effectiveness of
@@ -193,8 +193,8 @@ export default function Home() {
 
           {/* YouTube Shorts Section */}
           <div className="mb-20 mt-60">
-            <h2 className="text-3xl font-bold text-center mb-4">Quick Insights</h2>
-            <p className="max-w-3xl mx-auto text-center mb-10">
+            <h2 className="text-3xl font-bold text-center mb-4 text-bc-1">Quick Insights</h2>
+            <p className="max-w-3xl mx-auto text-center mb-12">
               Watch these short videos to get quick insights about HIV awareness and living with HIV.
             </p>
 
