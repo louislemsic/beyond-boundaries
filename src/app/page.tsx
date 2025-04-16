@@ -29,22 +29,22 @@ const videos = [
 // Testing centers data
 const testingCenters = [
   {
-    name: "City Health Department",
-    address: "123 Main Street, Downtown",
-    phone: "(555) 123-4567",
-    hours: "Mon-Fri: 9am-5pm",
+    name: "LoveYourself Anglo",
+    address: "715-A Shaw Boulevard, Unit 5, 3rd Floor, Anglo Building, Mandaluyong, Metro Manila, Philippines",
+    phone: "0997 658 2437",
+    hours: "Wednesday to Saturday: 12:00 PM – 7:00 PM; Sunday: 9:00 AM – 2:00 PM; Closed on Monday and Tuesday",
   },
   {
-    name: "Community Health Clinic",
-    address: "456 Park Avenue, Midtown",
-    phone: "(555) 987-6543",
-    hours: "Mon-Sat: 8am-8pm",
+    name: "AHF Wellness Center (Anglo Building)",
+    address: "#1 Quirino Highway, Amparo Subdivision, Barangay 179, North Caloocan, Metro Manila, Philippines",
+    phone: "0967 319 2040",
+    hours: "10:00 AM – 6:00 PM; Sunday: 9:00 AM – 2:00 PM",
   },
   {
-    name: "University Medical Center",
-    address: "789 College Road, University District",
-    phone: "(555) 456-7890",
-    hours: "24/7 Testing Available",
+    name: "PULSE Clinic Manila",
+    address: "Unit 202, Plaza 100 Building, V.A. Rufino Corner Dela Rosa Street, Legazpi Village, Makati City, Metro Manila, Philippines",
+    phone: "0967 315 2340",
+    hours: "Monday to Sunday: 9:00 AM – 9:00 PM",
   },
 ];
 
@@ -208,7 +208,7 @@ export default function Home() {
 
 
           {/* Get Tested Section */}
-          <div className="bg-gray-50 rounded-xl p-8 mb-16">
+          <div className="bg-gray-50 rounded-xl p-8 mb-16 mt-44" id="get-tested">
             <h2 className="text-3xl font-bold text-center mb-6 text-[#e22226]">Get Tested</h2>
             <p className="text-center max-w-3xl mx-auto mb-8">
               Getting tested for HIV is quick, easy, and confidential. Knowing your status is the first step in taking
@@ -245,7 +245,7 @@ export default function Home() {
             </div>
 
             {/* Call to Action */}
-            <div className="text-center" id="get-tested">
+            <div className="text-center">
               <p className="mb-4">Want to learn more about the testing process and what to expect?</p>
               <Link
                 href="/care-services"
