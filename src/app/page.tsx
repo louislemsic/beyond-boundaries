@@ -5,7 +5,9 @@ import Link from "next/link";
 import { MapPin } from "lucide-react"
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import VideoPlayer from "@/components/VideoPlayer";
+import YouTubeShort from "@/components/YouTubeShort"
+import ShortVideoModal from "@/components/ShortVideoModal"
+import MediaPlayer from "@/components/MediaPlayer"
 
 const videos = [
   {
@@ -13,41 +15,15 @@ const videos = [
     title: "Understanding HIV: The Basics",
     description:
       "Learn about what HIV is, how it affects the body, and the current state of HIV treatment and prevention.",
-    videoSrc: "/videos/1.mp4",
+    youtubeId: "xS-_dClKdMM", // CDC HIV video
   },
   {
     id: 2,
     title: "Fact Check with Gen Z",
     description:
       "Young adults discuss common misconceptions about HIV and fact-check popular beliefs about the virus.",
-    videoSrc: "/videos/2.mp4",
-  },
-  {
-    id: 3,
-    title: "Gen-Z Meets PLHIV",
-    description:
-      "A powerful conversation between Gen Z individuals and people living with HIV, breaking down stigma through dialogue.",
-    videoSrc: "/videos/3.mp4",
-  },
-  {
-    id: 4,
-    title: "HIV Support Services",
-    description: "An overview of the support services available for people living with HIV and how to access them.",
-    videoSrc: "/videos/4.mp4",
-  },
-  {
-    id: 5,
-    title: "Breaking the Stigma",
-    description: "Stories from individuals who are working to break the stigma surrounding HIV in their communities.",
-    videoSrc: "/videos/5.mp4",
-  },
-  {
-    id: 6,
-    title: "HIV Prevention: Modern Approaches",
-    description:
-      "Learn about modern HIV prevention methods including PrEP, PEP, and other strategies to reduce transmission.",
-    videoSrc: "/videos/6.mp4",
-  },
+    youtubeId: "WI5_bVH_W8k", // WHO HIV video
+  }
 ];
 
 // Testing centers data
@@ -72,9 +48,34 @@ const testingCenters = [
   },
 ];
 
+// YouTube Shorts data
+const youtubeShortsData = [
+  {
+    title: "HIV Awareness Series",
+    shorts: [
+      { id: "l6QCCuhu50E", part: 1, title: "HIV Awareness - Part 1" },
+      { id: "OnPJ3M5DSg4", part: 2, title: "HIV Awareness - Part 2" },
+      { id: "mTwizCrg384", part: 3, title: "HIV Awareness - Part 3" },
+    ],
+  },
+  {
+    title: "Living with HIV",
+    shorts: [
+      { id: "_MQGqL343gs", part: 1, title: "Living with HIV - Part 1" },
+      { id: "BrLiyFFqNiQ", part: 2, title: "Living with HIV - Part 2" },
+      { id: "xYs_R6IiSes", part: 3, title: "Living with HIV - Part 3" },
+    ],
+  },
+]
+
 export default function Home() {
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+
+  // State for YouTube Shorts modal
+  const [isShortModalOpen, setIsShortModalOpen] = useState(false)
+  const [currentShortId, setCurrentShortId] = useState("")
+  const [currentShortTitle, setCurrentShortTitle] = useState("")
 
   const openVideoPlayer = (index: number) => {
     setCurrentVideoIndex(index)
@@ -90,16 +91,33 @@ export default function Home() {
     }
   }
 
+  // Function to open the short video modal
+  const openShortModal = (youtubeId: string, title: string) => {
+    setCurrentShortId(youtubeId)
+    setCurrentShortTitle(title)
+    setIsShortModalOpen(true)
+  }
+
   return (
     <main className="min-h-screen">
-      {/* Video Player Modal */}
-      <VideoPlayer
+      {/* YouTube Video Player Modal */}
+      <MediaPlayer
         isOpen={isVideoPlayerOpen}
         onClose={() => setIsVideoPlayerOpen(false)}
-        videoSrc={videos[currentVideoIndex].videoSrc}
-        title={videos[currentVideoIndex].title}
-        description={videos[currentVideoIndex].description}
+        mediaSource={videos[currentVideoIndex]?.youtubeId || ""}
+        isYouTube={true}
+        title={videos[currentVideoIndex]?.title || ""}
+        description={videos[currentVideoIndex]?.description || ""}
         onNext={handleNextVideo}
+        autoplay={true}
+      />
+
+      {/* YouTube Shorts Modal */}
+      <ShortVideoModal
+        isOpen={isShortModalOpen}
+        onClose={() => setIsShortModalOpen(false)}
+        youtubeId={currentShortId}
+        title={currentShortTitle}
       />
 
       {/* Navigation Bar */}
@@ -152,13 +170,42 @@ export default function Home() {
 
         {/* Beyond Boundaries Section - Added more space on top */}
         <div className="container mx-auto px-4 pt-36 pb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Beyond Boundaries.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-48">Beyond Boundaries.</h2>
           <p className="max-w-3xl mx-auto text-center mb-20">
             An academic exploration that utilized a combination of surveys, interviews, media analysis, and qualitative
             research methods to provide valuable insights into the current situation of HIV, the effectiveness of
             current HIV support initiatives, identify areas for improvement, and potentially contribute to a better
             understanding of the peoples' perspectives on HIV and its support programs.
           </p>
+
+          {/* YouTube Shorts Section */}
+          <div className="mb-20 mt-60">
+            <h2 className="text-3xl font-bold text-center mb-4">Quick Insights</h2>
+            <p className="max-w-3xl mx-auto text-center mb-10">
+              Watch these short videos to get quick insights about HIV awareness and living with HIV.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {youtubeShortsData.map((series, seriesIndex) => (
+                <div key={seriesIndex}>
+                  <h3 className="text-xl font-bold mb-6 text-center">{series.title}</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    {series.shorts.map((short, shortIndex) => (
+                      <div key={shortIndex} className="flex flex-col items-center">
+                        <YouTubeShort
+                          youtubeId={short.id}
+                          partNumber={short.part}
+                          title={short.title}
+                          onClick={() => openShortModal(short.id, short.title)}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
 
           {/* Get Tested Section */}
           <div className="bg-gray-50 rounded-xl p-8 mb-16">

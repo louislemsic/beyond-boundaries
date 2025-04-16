@@ -55,13 +55,10 @@ export default function Footer() {
           <div className="text-red-600">© 2025 Beyond Boundaries. All rights reserved.</div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full sm:w-auto">
             <Link href="/terms" className="text-red-600 hover:underline">
-              Terms
+              Terms of Service
             </Link>
             <Link href="/privacy" className="text-red-600 hover:underline">
               Privacy Policy
-            </Link>
-            <Link href="/cookies" className="text-red-600 hover:underline">
-              Cookie Policy
             </Link>
           </div>
         </div>

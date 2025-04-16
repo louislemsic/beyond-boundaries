@@ -23,36 +23,6 @@ export default function VideosPage() {
       thumbnail: "/placeholder.svg?height=300&width=400",
       videoSrc: "/videos/2.mp4",
     },
-    {
-      id: 3,
-      title: "Gen-Z Meets PLHIV",
-      description:
-        "A powerful conversation between Gen Z individuals and people living with HIV, breaking down stigma through dialogue.",
-      thumbnail: "/placeholder.svg?height=300&width=400",
-      videoSrc: "/videos/3.mp4",
-    },
-    {
-      id: 4,
-      title: "HIV Support Services",
-      description: "An overview of the support services available for people living with HIV and how to access them.",
-      thumbnail: "/placeholder.svg?height=300&width=400",
-      videoSrc: "/videos/4.mp4",
-    },
-    {
-      id: 5,
-      title: "Breaking the Stigma",
-      description: "Stories from individuals who are working to break the stigma surrounding HIV in their communities.",
-      thumbnail: "/placeholder.svg?height=300&width=400",
-      videoSrc: "/videos/5.mp4",
-    },
-    {
-      id: 6,
-      title: "HIV Prevention: Modern Approaches",
-      description:
-        "Learn about modern HIV prevention methods including PrEP, PEP, and other strategies to reduce transmission.",
-      thumbnail: "/placeholder.svg?height=300&width=400",
-      videoSrc: "/videos/6.mp4",
-    },
   ]
 
   return (
@@ -70,7 +40,7 @@ export default function VideosPage() {
       </header>
 
       {/* Videos Grid */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-16 mb-40">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video) => (
