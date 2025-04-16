@@ -99,7 +99,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gray-50">
       {/* YouTube Video Player Modal */}
       <MediaPlayer
         isOpen={isVideoPlayerOpen}
@@ -120,24 +120,32 @@ export default function Home() {
         title={currentShortTitle}
       />
 
-      {/* Navigation Bar */}
-      <NavBar />
-
-      {/* Header Section with Video Background */}
-      <header className="relative text-white">
-        {/* Video Background with Red Overlay - Contained within header */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[#e22226] bg-opacity-80 z-10"></div>
-          <video className="absolute inset-0 w-full h-full object-cover scale-125" autoPlay muted loop playsInline>
-            <source src="/videos/1.mp4" type="video/mp4" />
-          </video>
+      {/* Hero Section */}
+      <div className="relative bg-transparent min-h-[500px]">
+        {/* Video Background Container with subtle curve */}
+        <div className="absolute inset-0 z-20 overflow-hidden rounded-b-[40%_10%]"> {/* Reduced curve */}
+          {/* YouTube iframe */}
+          <iframe
+            className="absolute h-[300%] w-[300%] -top-[85%] -left-[75%] z-20 object-cover"
+            src={`https://www.youtube.com/embed/${videos[0].youtubeId}?autoplay=1&mute=1&loop=1&playlist=${videos[0].youtubeId}&controls=0&disablekb=1&modestbranding=1&rel=0`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Background Video"
+          />
+          {/* Red overlay */}
+          <div className="absolute inset-0 bg-[#e22226] opacity-75 z-30"></div>
         </div>
 
-        {/* Content on top of video */}
-        <div className="relative z-20">
-          {/* Hero Section */}
-          <div className="container mx-auto px-4 py-20 flex justify-center items-center">
-            <div className="text-center max-w-3xl">
+        {/* NavBar (top layer) */}
+        <div className="relative z-30">
+          <NavBar />
+        </div>
+
+        {/* Hero Content (middle layer) */}
+        <div className="relative z-20 h-full flex items-center">
+          <div className="container mx-auto px-4 py-20">
+            <div className="text-center max-w-3xl mx-auto text-white">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">Let's break the stigma about HIV together</h1>
               <p className="text-lg mb-4">
                 Here at Beyond Boundaries, we provide a platform to understand HIV and its support programs better.
@@ -160,17 +168,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </header>
-
-
+      </div>
+      
       {/* Curved White Section */}
       <div className="bg-white relative">
-        {/* Curved red section */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-[#e22226] rounded-b-[50%_100%]"></div>
-
         {/* Beyond Boundaries Section - Added more space on top */}
-        <div className="container mx-auto px-4 pt-36 pb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-48">Beyond Boundaries.</h2>
+        <div className="container mx-auto px-4 pt-36 pb-16 relative overflow-hidden">
+          {/* Large SVG Background */}
+          <div className="absolute right-0 top-20 w-5xl opacity-10 z-0 overflow-hidden">
+            <img 
+              src="/svgs/logo-red.svg" 
+              alt="Beyond Boundaries Logo" 
+              className="h-[800px] w-auto"
+            />
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-36">Beyond Boundaries.</h2>
           <p className="max-w-3xl mx-auto text-center mb-20">
             An academic exploration that utilized a combination of surveys, interviews, media analysis, and qualitative
             research methods to provide valuable insights into the current situation of HIV, the effectiveness of

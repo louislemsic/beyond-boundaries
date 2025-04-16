@@ -151,60 +151,22 @@ export default function CareServicesPage() {
             </div>
           </div>
 
-          {/* Support Services */}
-          <div className="bg-gray-50 rounded-xl p-8 mb-16">
-            <h2 className="text-2xl font-bold text-center mb-8">Additional Support Services</h2>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-lg mb-3">Mental Health Support</h3>
-                <p className="text-gray-600 mb-4">
-                  Access to counseling, therapy, and support groups to help with the emotional aspects of living with
-                  HIV.
-                </p>
-                <Link href="#" className="text-[#e22226] font-medium hover:underline">
-                  Learn more →
-                </Link>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-lg mb-3">Housing Assistance</h3>
-                <p className="text-gray-600 mb-4">
-                  Programs to help with housing stability, including rental assistance and supportive housing options.
-                </p>
-                <Link href="#" className="text-[#e22226] font-medium hover:underline">
-                  Learn more →
-                </Link>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-lg mb-3">Nutrition Services</h3>
-                <p className="text-gray-600 mb-4">
-                  Food assistance, nutrition counseling, and meal programs to support your overall health and
-                  well-being.
-                </p>
-                <Link href="#" className="text-[#e22226] font-medium hover:underline">
-                  Learn more →
-                </Link>
-              </div>
-            </div>
-          </div>
-
           {/* Call to Action */}
-          <div className="text-center">
+          <div className="text-center mt-44 mb-44">
             <h2 className="text-2xl font-bold mb-4">Ready to Take the First Step?</h2>
             <p className="max-w-2xl mx-auto mb-6">
               Whether you're seeking testing, treatment, or support, we're here to help you navigate your journey.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="#"
+                href="/#get-tested"
                 className="bg-[#e22226] text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors"
               >
                 Find Testing Locations
               </Link>
               <Link
-                href="#"
+                href="https://www.google.com/search?q=HIV+Counselors+near+me"
+                target="_blank"
                 className="border border-[#e22226] text-[#e22226] px-6 py-3 rounded-full font-medium hover:bg-[#e22226] hover:text-white transition-colors"
               >
                 Contact a Counselor
