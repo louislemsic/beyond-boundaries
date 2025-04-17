@@ -12,18 +12,28 @@ export default function VideosPage() {
       title: "Understanding HIV: The Basics",
       description:
         "Learn about what HIV is, how it affects the body, and the current state of HIV treatment and prevention.",
-      thumbnail: "/placeholder.svg?height=300&width=400",
-      videoSrc: "/videos/1.mp4",
+      youtubeId: "zK5zaNA6zfg",
     },
     {
       id: 2,
-      title: "Fact Check with Gen Z",
+      title: "HIV Fact Talk with Gen-Zs Part 1",
       description:
         "Young adults discuss common misconceptions about HIV and fact-check popular beliefs about the virus.",
-      thumbnail: "/placeholder.svg?height=300&width=400",
-      videoSrc: "/videos/2.mp4",
+      youtubeId: "K3DY34uFq2Q",
     },
+    {
+      id: 3,
+      title: "HIV Fact Talk with Gen-Zs Part 2",
+      description:
+        "Young adults discuss common misconceptions about HIV and fact-check popular beliefs about the virus.",
+      youtubeId: "3Xh2IWXmFzE",
+    }
   ]
+
+  // Helper function to get YouTube thumbnail URL
+  const getYouTubeThumbnail = (youtubeId: string) => {
+    return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+  }
 
   return (
     <main className="min-h-screen">
@@ -49,7 +59,13 @@ export default function VideosPage() {
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
               >
                 <div className="relative aspect-video">
-                  <Image src={video.thumbnail || "/placeholder.svg"} alt={video.title} fill className="object-cover" />
+                  <Image 
+                    src={getYouTubeThumbnail(video.youtubeId)} 
+                    alt={video.title} 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <Link href={`/videos/${video.id}`} className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center">
                       <Play className="w-8 h-8 text-[#e22226] ml-1" />
@@ -76,4 +92,3 @@ export default function VideosPage() {
     </main>
   )
 }
-

@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="w-full">
+    <footer className="w-full mt-32">
       {/* Main section with background image and red overlay */}
       <div className="relative py-16 px-6 md:px-12 overflow-hidden">
         {/* Background image with red filter */}

@@ -8,6 +8,7 @@ import NavBar from "@/components/NavBar";
 import YouTubeShort from "@/components/YouTubeShort"
 import ShortVideoModal from "@/components/ShortVideoModal"
 import MediaPlayer from "@/components/MediaPlayer"
+import FAQs from "@/components/FAQs";
 
 const videos = [
   {
@@ -15,14 +16,21 @@ const videos = [
     title: "Understanding HIV: The Basics",
     description:
       "Learn about what HIV is, how it affects the body, and the current state of HIV treatment and prevention.",
-    youtubeId: "xS-_dClKdMM", // CDC HIV video
+    youtubeId: "zK5zaNA6zfg", 
   },
   {
     id: 2,
-    title: "Fact Check with Gen Z",
+    title: "HIV Fact Talk with Gen-Zs Part 1",
     description:
       "Young adults discuss common misconceptions about HIV and fact-check popular beliefs about the virus.",
-    youtubeId: "WI5_bVH_W8k", // WHO HIV video
+    youtubeId: "K3DY34uFq2Q", 
+  },
+  {
+    id: 3,
+    title: "HIV Fact Talk with Gen-Zs Part 2",
+    description:
+      "Young adults discuss common misconceptions about HIV and fact-check popular beliefs about the virus.",
+    youtubeId: "3Xh2IWXmFzE",
   }
 ];
 
@@ -53,7 +61,7 @@ const youtubeShortsData = [
   {
     title: "HIV Awareness Series",
     shorts: [
-      { id: "l6QCCuhu50E", part: 1, title: "HIV Awareness - Part 1" },
+      { id: "7ZprMOt0dck", part: 1, title: "HIV Awareness - Part 1" },
       { id: "OnPJ3M5DSg4", part: 2, title: "HIV Awareness - Part 2" },
       { id: "mTwizCrg384", part: 3, title: "HIV Awareness - Part 3" },
     ],
@@ -99,7 +107,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-white">
       {/* YouTube Video Player Modal */}
       <MediaPlayer
         isOpen={isVideoPlayerOpen}
@@ -126,15 +134,14 @@ export default function Home() {
         <div className="absolute inset-0 z-20 overflow-hidden rounded-b-[40%_10%]"> {/* Reduced curve */}
           {/* YouTube iframe */}
           <iframe
-            className="absolute h-[300%] w-[300%] -top-[85%] -left-[75%] z-20 object-cover"
-            src={`https://www.youtube.com/embed/${videos[0].youtubeId}?autoplay=1&mute=1&loop=1&playlist=${videos[0].youtubeId}&controls=0&disablekb=1&modestbranding=1&rel=0`}
-            frameBorder="0"
+            className="absolute h-[300%] w-[300%] -top-[90%] -left-[100%] z-20 object-cover"
+            src={`https://www.youtube.com/embed/${videos[0].youtubeId}?start=7&autoplay=1&mute=1&loop=1&playlist=${videos[0].youtubeId}&controls=0&disablekb=1&modestbranding=1&rel=0`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="Background Video"
           />
           {/* Red overlay */}
-          <div className="absolute inset-0 bg-[#e22226] opacity-75 z-30"></div>
+          <div className="absolute inset-0 bg-[#e22226] opacity-90 z-40"></div>
         </div>
 
         {/* NavBar (top layer) */}
@@ -146,11 +153,10 @@ export default function Home() {
         <div className="relative z-20 h-full flex items-center">
           <div className="container mx-auto px-4 py-20">
             <div className="text-center max-w-3xl mx-auto text-white">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 ">Let's break the stigma about HIV together</h1>
-              <p className="text-lg mb-4">
-                Here at Beyond Boundaries, we provide a platform to understand HIV and its support programs better.
+              <h1 className="text-3xl md:text-4xl font-bold mb-8 ">Let's break the stigma about HIV together!</h1>
+              <p className="text-md mb-8">
+                Here at Beyond Boundaries, we provide a platform to understand HIV and its support programs better. Watch our latest video about HIV by clicking the button below.
               </p>
-              <p className="text-lg mb-8">Watch our latest video about HIV by clicking the button below</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/videos"
@@ -185,10 +191,9 @@ export default function Home() {
           
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-36 text-bc-1">Beyond Boundaries.</h2>
           <p className="max-w-3xl mx-auto text-center mb-20">
-            An academic exploration that utilized a combination of surveys, interviews, media analysis, and qualitative
-            research methods to provide valuable insights into the current situation of HIV, the effectiveness of
-            current HIV support initiatives, identify areas for improvement, and potentially contribute to a better
-            understanding of the peoples' perspectives on HIV and its support programs.
+          An academic exploration utilizing a combination of surveys, interviews, media analysis, and qualitative research methods 
+          to provide valuable insights into the current situation of HIV, the effectiveness of current HIV support initiatives, 
+          identify areas for improvement, and potentially contribute to a better understanding of the peoples' perspectives on HIV and its support programs.
           </p>
 
           {/* YouTube Shorts Section */}
@@ -221,7 +226,7 @@ export default function Home() {
 
 
           {/* Get Tested Section */}
-          <div className="bg-gray-50 rounded-xl p-8 mb-16 mt-44" id="get-tested">
+          <div className="bg-gray-50 rounded-xl p-8 mt-44" id="get-tested">
             <h2 className="text-3xl font-bold text-center mb-6 text-[#e22226]">Get Tested</h2>
             <p className="text-center max-w-3xl mx-auto mb-8">
               Getting tested for HIV is quick, easy, and confidential. Knowing your status is the first step in taking
@@ -270,6 +275,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <FAQs />
 
       <Footer />
     </main>

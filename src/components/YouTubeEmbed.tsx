@@ -56,7 +56,6 @@ export default function YouTubeEmbed({
       <iframe
         src={getEmbedUrl()}
         title={title}
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         className="absolute top-0 left-0 w-full h-full"

@@ -152,7 +152,7 @@ export default function CareServicesPage() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-44 mb-44">
+          <div className="text-center mt-44">
             <h2 className="text-2xl font-bold mb-4">Ready to Take the First Step?</h2>
             <p className="max-w-2xl mx-auto mb-6">
               Whether you're seeking testing, treatment, or support, we're here to help you navigate your journey.
