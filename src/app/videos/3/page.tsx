@@ -1,16 +1,17 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import NavBar from "@/components/NavBar"
 import Footer from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Avatar } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { formatDistanceToNow } from "date-fns"
 
 export default function VideoPage() {
-  const params = useParams()
+  const params = { id: "3" };
+
   const router = useRouter()
   const [videoId, setVideoId] = useState<number>(1)
   const [videoTitle, setVideoTitle] = useState<string>("")
@@ -22,21 +23,24 @@ export default function VideoPage() {
     user: string,
     content: string,
     date: Date,
-    likes: number
+    likes: number,
+    avatar: string
   }>>([
     {
       id: 1,
       user: "Alex",
       content: "This video was really informative, thanks for sharing!",
       date: new Date(2025, 3, 15),
-      likes: 12
+      likes: 12,
+      avatar: ""
     },
     {
       id: 2,
       user: "Taylor",
       content: "I learned so much from this! Can you make more videos about prevention methods?",
       date: new Date(2025, 3, 16),
-      likes: 8
+      likes: 8,
+      avatar: ""
     }
   ])
 
@@ -89,6 +93,7 @@ export default function VideoPage() {
     const newComment = {
       id: comments.length + 1,
       user: "You",
+      avatar: "",
       content: comment,
       date: new Date(),
       likes: 0
@@ -190,7 +195,8 @@ export default function VideoPage() {
                 <div key={comment.id} className="p-4 border rounded-lg">
                   <div className="flex items-center mb-2">
                     <Avatar className="h-8 w-8 bg-gray-200 mr-3">
-                      <span className="text-xs font-medium">{comment.user.substring(0, 2).toUpperCase()}</span>
+                      <AvatarImage src={comment.avatar} />
+                      <AvatarFallback>{comment.user.split(" ").slice(0, 3).map(word => word[0]).join("").toUpperCase()}</AvatarFallback>
                     </Avatar>
                     <div>
                       <p className="font-medium">{comment.user}</p>

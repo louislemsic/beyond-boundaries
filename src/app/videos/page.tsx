@@ -9,9 +9,9 @@ export default function VideosPage() {
   const videos = [
     {
       id: 1,
-      title: "Understanding HIV: The Basics",
+      title: "Gen Z's Meets PLHIV",
       description:
-        "Learn about what HIV is, how it affects the body, and the current state of HIV treatment and prevention.",
+        "In this video, Gen-Zs meet PLHIV (People living with HIV) they openly discuss what it's like to have HIV and breaking stigma.",
       youtubeId: "zK5zaNA6zfg",
     },
     {

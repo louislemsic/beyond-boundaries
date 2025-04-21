@@ -7,7 +7,7 @@ export default function NavBar() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="w-32 h-auto">
           <Link href="/">
-              <Image src="/svgs/wordmark.svg" alt="Beyond Boundaries Logo" width={100} height={100} className="w-full h-full" />
+              <Image src="/iteration2/svgs/wordmark.svg" alt="Beyond Boundaries Logo" width={100} height={100} className="w-full h-full" />
           </Link>
         </div>
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">

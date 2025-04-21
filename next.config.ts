@@ -4,6 +4,7 @@ import withSerwistInit from "@serwist/next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -12,7 +13,11 @@ const nextConfig: NextConfig = {
         pathname: "/vi/**",
       },
     ],
+    path: ""
   },
+  output: "export",
+  basePath: "/iteration2",
+  assetPrefix: "/iteration2",
 };
 /** DO NOT TOUCH */
 const withSerwist = withSerwistInit({

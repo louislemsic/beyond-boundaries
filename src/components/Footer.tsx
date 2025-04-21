@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Background image with red filter */}
         <div className="absolute inset-0 z-0 opacity-93">
           <Image 
-            src="/images/background.jpeg" 
+            src="/iteration2/images/background.jpeg" 
             alt="Background" 
             className="object-cover"
             fill 
@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="mb-2">
             <Link href="/" >
               <Image
-                src="/svgs/wordmark.svg"
+                src="/iteration2/svgs/wordmark.svg"
                 alt="Beyond Boundaries"
                 width={250}
                 height={100}
@@ -40,7 +40,7 @@ export default function Footer() {
         {/* Background decorative element */}
         <div className="absolute right-0 top-0 w-auto h-full z-3 opacity-80">
           <Image
-            src="/svgs/logo-red.svg"
+            src="/iteration2/svgs/logo-red.svg"
             alt="Background Logo"
             width={700}
             height={100}

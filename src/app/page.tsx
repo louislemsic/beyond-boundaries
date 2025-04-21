@@ -183,7 +183,7 @@ export default function Home() {
           {/* Large SVG Background */}
           <div className="absolute right-0 top-20 w-5xl opacity-10 z-0 overflow-hidden">
             <img 
-              src="/svgs/logo-red.svg" 
+              src="/iteration2/svgs/logo-red.svg" 
               alt="Beyond Boundaries Logo" 
               className="h-[800px] w-auto"
             />
