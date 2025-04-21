@@ -48,7 +48,7 @@ const article = {
     source: "https://www.hiv.gov/hiv-basics/overview/about-hiv-and-aids/what-are-hiv-and-aids"
   };
 
-export default function ArticlePage({ params }: { params: { id: string } }) {
+export default function ArticlePage({ params }: any) {
 //   // Find the article by ID
 //   const articleId = parseInt(params.id, 10)
 //   const article = articles.find(a => a.id === articleId)
