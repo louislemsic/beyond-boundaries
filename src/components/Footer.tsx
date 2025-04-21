@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Footer() {
   return (
     <footer className="w-full mt-32">
@@ -9,7 +11,7 @@ export default function Footer() {
         {/* Background image with red filter */}
         <div className="absolute inset-0 z-0 opacity-93">
           <Image 
-            src="/iteration2/images/background.jpeg" 
+            src={`${basePath}/images/background.jpeg`} 
             alt="Background" 
             className="object-cover"
             fill 
@@ -22,7 +24,7 @@ export default function Footer() {
           <div className="mb-2">
             <Link href="/" >
               <Image
-                src="/iteration2/svgs/wordmark.svg"
+                src={`${basePath}/svgs/wordmark.svg`}
                 alt="Beyond Boundaries"
                 width={250}
                 height={100}
@@ -40,7 +42,7 @@ export default function Footer() {
         {/* Background decorative element */}
         <div className="absolute right-0 top-0 w-auto h-full z-3 opacity-80">
           <Image
-            src="/iteration2/svgs/logo-red.svg"
+            src={`${basePath}/svgs/logo-red.svg`}
             alt="Background Logo"
             width={700}
             height={100}

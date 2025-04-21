@@ -164,13 +164,6 @@ export default function CareServicesPage() {
               >
                 Find Testing Locations
               </Link>
-              <Link
-                href="https://www.google.com/search?q=HIV+Counselors+near+me"
-                target="_blank"
-                className="border border-[#e22226] text-[#e22226] px-6 py-3 rounded-full font-medium hover:bg-[#e22226] hover:text-white transition-colors"
-              >
-                Contact a Counselor
-              </Link>
             </div>
           </div>
         </div>

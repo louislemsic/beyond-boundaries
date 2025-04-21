@@ -74,7 +74,9 @@ const youtubeShortsData = [
       { id: "xYs_R6IiSes", part: 3, title: "Living with HIV - Part 3" },
     ],
   },
-]
+];
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Home() {
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false)
@@ -183,7 +185,7 @@ export default function Home() {
           {/* Large SVG Background */}
           <div className="absolute right-0 top-20 w-5xl opacity-10 z-0 overflow-hidden">
             <img 
-              src="/iteration2/svgs/logo-red.svg" 
+              src={`${basePath}/svgs/logo-red.svg`}
               alt="Beyond Boundaries Logo" 
               className="h-[800px] w-auto"
             />
