@@ -177,7 +177,7 @@ export default function About() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <Link 
-              href="https://www.instagram.com/beyondboundaries" 
+              href="https://www.instagram.com/hello.beyondboundaries" 
               className="flex items-center gap-2 text-lg hover:text-red-600 transition-colors border border-gray-300 rounded-full px-6 py-3 hover:border-red-600" 
               target="_blank"
             >
