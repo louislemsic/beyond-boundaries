@@ -5,59 +5,25 @@ import Footer from "@/components/Footer"
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
-// Define article data (in a real app, this would likely come from a database or API)
-const articles = [
-  {
-    id: "what-is-hiv",
-    title: "What is HIV?",
-    author: "Hazel",
-    date: "April 15, 2025",
-    imageUrl: "/images/what-is-hiv.jpg",
-    content: `
-      **Human Immunodeficiency Virus,** widely recognized as **HIV** attacks and weakens the immune system that is known to be transmitted through unprotected sexual contact, sharing contaminated needles or syringes. HIV can also spread by bodily fluids such as blood, sperm, vaginal secretions, and breast milk, and from an HIV-positive mother to her child during pregnancy, childbirth.
-
-      Despite further advancements, there is still no cure that is 100% for HIV; it can only be treated with competent and certain medical care, particularly medicines and therapies such as Antiretroviral Therapy (ART). These operations help control and maintain good health, preventing the virus from getting worse. Encourage people that they can still live a normal life by pushing them to do what they want, exercise, talk to people, and live positively.
-      
-      Once a person has contracted the virus and doesn't take medical care seriously, they are most likely the ones that may develop another virus known as **Acquired Immunodeficiency Syndrome**, or **AIDS** which is a severe case of HIV. This is why the World Health Organization encourages people to have themselves tested especially those who are at risk of acquiring HIV or AIDS to be able to seek effective prevention and avoid making it worse.
-    `,
-    source: "https://www.hiv.gov/hiv-basics/overview/about-hiv-and-aids/what-are-hiv-and-aids"
-  },
-  {
-    id: "hiv-data",
-    title: "Latest Data about HIV",
-    author: "Hazel",
-    date: "April 18, 2025",
-    imageUrl: "/api/placeholder/1200/400",
-    content: `Content for Latest Data about HIV article will go here.`
-  }
-]
-
 const article = {
-    id: "what-is-hiv",
-    title: "What is HIV?",
+    id: "hiv-history",
+    title: "History of HIV/AIDS",
     author: "Hazel",
-    date: "April 15, 2025",
-    imageUrl: "/images/what-is-hiv.jpg",
+    date: "April 20, 2025",
+    imageUrl: "/images/hiv-history.jpg",
     content: `
-      **Human Immunodeficiency Virus,** widely recognized as **HIV** attacks and weakens the immune system that is known to be transmitted through unprotected sexual contact, sharing contaminated needles or syringes. HIV can also spread by bodily fluids such as blood, sperm, vaginal secretions, and breast milk, and from an HIV-positive mother to her child during pregnancy, childbirth.
+      It is believed that the first case in the Philippines happened in Manila 1984 because of people coming in the country that caused the spread of the virus. While in June 1981 in Los Angeles, five young homosexual men were diagnosed with Pneumocystis carinii pneumonia and other opportunistic infections that lead to AIDS (Acquired Immunodeficiency Syndrome). This eventually led to 100,000 cases of AIDS and more than 59,000 AIDS-related deaths reported to CDC (Centers for Disease Control and Prevention. In 1988, it was the 15th leading cause of death and, in 1987, it ranked seventh in terms of estimated years of potential life lost before age 65. The first reported AIDS cases to CDC were 50,000 from the years of 1981 to 1987 and the second report was 50,000 between December 1987 and July 1989.
 
-      Despite further advancements, there is still no cure that is 100% for HIV; it can only be treated with competent and certain medical care, particularly medicines and therapies such as Antiretroviral Therapy (ART). These operations help control and maintain good health, preventing the virus from getting worse. Encourage people that they can still live a normal life by pushing them to do what they want, exercise, talk to people, and live positively.
+      HIV still remains as one of the most significant health concerns all over the world, where there would be 32 cases reported per day (WHO, 2019). Despite the advancement of technology, there is still no cure for HIV, only treatments and ART. Furthermore, people are still not knowledgeable enough about what HIV really is and organizations that can help them with their situation as well as being able to provide a safer space for them.
       
-      \n\nOnce a person has contracted the virus and doesn't take medical care seriously, they are most likely the ones that may develop another virus known as **Acquired Immunodeficiency Syndrome**, or **AIDS** which is a severe case of HIV. This is why the World Health Organization encourages people to have themselves tested especially those who are at risk of acquiring HIV or AIDS to be able to seek effective prevention and avoid making it worse.
+      A research was conducted around University Belt, Manila and the majority of the respondents have answered that they are not knowledgeable about HIV, whereas most have responded that they have learned about HIV through social media. Additionally, the majority of the respondents gained information on existing HIV support activities in the Philippines from social media. However, through further findings, this still leaves room for lack of awareness, as people can easily scroll through posts, disregard information, and gravitate towards content that aligns more closely with their personal interests.
+      
+      There is still a presence of fear, intimidation, ignorance, misinformation and stigma with the association of HIV in the eyes of Gen-Z, as some of the answers of the respondents when asked: "How else can you contract HIV?" There were a variety of answers that were factually incorrect, such as "kissing". Although, the data also found that Gen-Z acquired their knowledge and understanding of HIV and HIV support initiatives mostly through social media, where almost half of the respondents observed HIV support promotion on social media to be encouraging, but even with this encouragement, social media still has space for misinformation or fake news like other media.
     `,
-    source: "https://www.hiv.gov/hiv-basics/overview/about-hiv-and-aids/what-are-hiv-and-aids"
+    source: "https://www.cdc.gov/mmwr/preview/mmwrhtml/june_5.htm"
   };
 
 export default function ArticlePage({ params }: any) {
-//   // Find the article by ID
-//   const articleId = parseInt(params.id, 10)
-//   const article = articles.find(a => a.id === articleId)
-
-//   // If article doesn't exist, return 404
-//   if (!article) {
-//     notFound()
-//   }
-
   return (
     <main className="min-h-screen">
       <div className="bg-bc-1">
@@ -144,4 +110,4 @@ export default function ArticlePage({ params }: any) {
       <Footer />
     </main>
   )
-}
+} 

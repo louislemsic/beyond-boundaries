@@ -62,7 +62,7 @@ export default function HIVDataPage() {
       
       {/* Article Content */}
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Latest Data about HIV</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">2023 Data about HIV/AIDS</h1>
         
         <div className="flex items-center text-gray-600 mb-8">
           <span className="mr-4">By Hazel</span>

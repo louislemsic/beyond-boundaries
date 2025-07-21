@@ -17,8 +17,22 @@ export default function ArticlesPage() {
       imageUrl: "/images/what-is-hiv.jpg",
     },
     {
+      id: "hiv-history",
+      title: "History of HIV/AIDS",
+      description:
+        "Explore the historical timeline of HIV/AIDS, from its first documented cases to its impact on global health and current challenges.",
+      imageUrl: "/images/hiv-history.jpg",
+    },
+    {
+      id: "transmission-to-treatment",
+      title: "Transmission to Treatment",
+      description:
+        "Learn about HIV transmission methods, symptoms, prevention strategies, and treatment options available in the Philippines.",
+      imageUrl: "/images/transmission.jpg",
+    },
+    {
       id: "hiv-data",
-      title: "Latest Data about HIV",
+      title: "2023 Data about HIV/AIDS",
       description:
         "An in-depth analysis of current HIV statistics worldwide, including infection rates, treatment access, and progress in prevention efforts.",
       imageUrl: "/images/hiv-data.jpg",

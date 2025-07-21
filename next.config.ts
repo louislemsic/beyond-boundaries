@@ -16,8 +16,8 @@ const nextConfig: NextConfig = {
     path: ""
   },
   output: "export",
-  basePath: "/iteration2",
-  assetPrefix: "/iteration2",
+  basePath: "/iteration3",
+  assetPrefix: "/iteration3",
 };
 /** DO NOT TOUCH */
 const withSerwist = withSerwistInit({
