@@ -324,12 +324,12 @@ export default function Home() {
             <p className="max-w-xl mb-8 mt-8 text-lg md:text-xl font-light">
               Knowing your HIV status is a powerful step toward a healthier future. Testing is quick, confidential, and can make all the difference. Don’t wait—take action for yourself and your loved ones today.
             </p>
-            <a
+            <Link
               href="/care-services"
               className="bg-white text-[#e22226] px-10 py-5 rounded-full text-xl font-bold shadow-md hover:bg-gray-100 transition-colors"
             >
               Get Tested Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>

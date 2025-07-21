@@ -911,7 +911,7 @@ export default function CareServicesPage() {
             </div>
           </div>
 
-          {/* Call to Action */}
+          {/* Call to Action
           <div className="text-center mt-24">
             <h2 className="text-2xl font-bold mb-4">Ready to Take the First Step?</h2>
             <p className="max-w-2xl mx-auto mb-6">
@@ -925,7 +925,7 @@ export default function CareServicesPage() {
                 Find Testing Locations
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
