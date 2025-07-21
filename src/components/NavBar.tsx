@@ -65,7 +65,7 @@ export default function NavBar() {
             About Us
           </Link>
           <Link
-            href="/#get-tested"
+            href="/care-services"
             className="uppercase border border-white rounded-full px-6 py-2 hover:bg-white hover:text-[#e22226] transition-colors"
           >
             Get Tested
@@ -117,28 +117,28 @@ export default function NavBar() {
         >
           <Link 
             href="/care-services" 
-            className="uppercase text-lg font-medium hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
+            className="uppercase border text-center border-white rounded-full text-lg font-medium hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
             onClick={() => setIsMenuOpen(false)}
           >
-            Care Services
+            Get Tested
           </Link>
           <Link 
             href="/articles" 
-            className="uppercase text-lg font-medium hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
+            className="uppercase text-lg font-medium text-center hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
             onClick={() => setIsMenuOpen(false)}
           >
             Articles
           </Link>
           <Link 
             href="/videos" 
-            className="uppercase text-lg font-medium hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
+            className="uppercase text-lg font-medium text-center hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
             onClick={() => setIsMenuOpen(false)}
           >
             Videos
           </Link>
           <Link 
             href="/about-us" 
-            className="uppercase text-lg font-medium hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
+            className="uppercase text-lg font-medium text-center hover:underline py-2 transform transition-all duration-300 hover:translate-x-2"
             onClick={() => setIsMenuOpen(false)}
           >
             About Us

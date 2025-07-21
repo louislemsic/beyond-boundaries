@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Play } from "lucide-react"
 import NavBar from "@/components/NavBar"
 import Footer from "@/components/Footer"
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH
 
 export default function VideosPage() {
   // Video data
@@ -40,8 +41,15 @@ export default function VideosPage() {
       {/* Header */}
       <header className="bg-[#e22226] text-white">
         <NavBar />
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-center">Video Resources</h1>
+        <div className="container mx-auto px-4 py-12 flex flex-col items-center">
+          <Image 
+            src={`${basePath}/images/video-series.png`}
+            alt=""
+            width={250}
+            height={250}
+            className="w-75 h-auto"
+            priority
+          />
           <p className="text-lg text-center mt-4 max-w-2xl mx-auto">
             Explore our collection of educational videos about HIV, featuring personal stories, expert insights, and
             important information about prevention and support.

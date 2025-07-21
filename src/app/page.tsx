@@ -226,59 +226,106 @@ export default function Home() {
             </div>
           </div>
 
-
-          {/* Get Tested Section */}
-          <div className="bg-gray-50 rounded-xl p-8 mt-44" id="get-tested">
-            <h2 className="text-3xl font-bold text-center mb-6 text-[#e22226]">Get Tested</h2>
+          {/* Articles Preview Section */}
+          <div className="bg-gray-50 rounded-xl p-8 mt-44" id="articles-preview">
+            <h2 className="text-3xl font-bold text-center mb-6 text-[#e22226]">Featured Articles</h2>
             <p className="text-center max-w-3xl mx-auto mb-8">
-              Getting tested for HIV is quick, easy, and confidential. Knowing your status is the first step in taking
-              control of your health. Below are some locations where you can get tested in your area.
+              Explore our latest articles about HIV awareness, history, and data. Swipe to discover more.
             </p>
 
-            {/* Google Maps Placeholder */}
-            <div className="w-full h-[400px] bg-gray-200 rounded-lg mb-8 overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center bg-gray-300">
-                <div className="text-center">
-                  <MapPin size={48} className="mx-auto mb-4 text-[#e22226]" />
-                  <p className="text-gray-600">Google Maps would be integrated here</p>
-                  <p className="text-sm text-gray-500">Showing nearby HIV testing centers</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testing Centers List */}
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {testingCenters.map((center, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-bold text-lg mb-2">{center.name}</h3>
-                  <p className="text-gray-600 mb-1">
-                    <span className="font-medium">Address:</span> {center.address}
-                  </p>
-                  <p className="text-gray-600 mb-1">
-                    <span className="font-medium">Phone:</span> {center.phone}
-                  </p>
-                  <p className="text-gray-600">
-                    <span className="font-medium">Hours:</span> {center.hours}
-                  </p>
+            {/* Horizontally Scrollable Articles List */}
+            <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+              {[
+                {
+                  id: "what-is-hiv",
+                  title: "What is HIV?",
+                  description:
+                    "This article provides a comprehensive overview of HIV, explaining how the virus works, how it's transmitted, and current treatment options.",
+                  imageUrl: "/images/what-is-hiv.jpg",
+                },
+                {
+                  id: "hiv-history",
+                  title: "History of HIV/AIDS",
+                  description:
+                    "Explore the historical timeline of HIV/AIDS, from its first documented cases to its impact on global health and current challenges.",
+                  imageUrl: "/images/hiv-history.jpg",
+                },
+                {
+                  id: "transmission-to-treatment",
+                  title: "Transmission to Treatment",
+                  description:
+                    "Learn about HIV transmission methods, symptoms, prevention strategies, and treatment options available in the Philippines.",
+                  imageUrl: "/images/transmission.jpg",
+                },
+                {
+                  id: "hiv-data",
+                  title: "2023 Data about HIV/AIDS",
+                  description:
+                    "An in-depth analysis of current HIV statistics worldwide, including infection rates, treatment access, and progress in prevention efforts.",
+                  imageUrl: "/images/hiv-data.jpg",
+                },
+              ].map((article) => (
+                <div
+                  key={article.id}
+                  className="min-w-[280px] max-w-xs bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow flex-shrink-0 snap-center"
+                >
+                  <div className="relative w-full h-40 rounded-t-lg overflow-hidden">
+                    <img
+                      src={`${basePath}${article.imageUrl}`}
+                      alt={article.title}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="p-4 flex flex-col h-[180px]">
+                    <h3 className="text-lg font-bold mb-2 line-clamp-2">{article.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.description}</p>
+                    <a
+                      href={`/articles/${article.id}`}
+                      className="mt-auto bg-[#e22226] text-white px-4 py-2 rounded-full text-xs font-medium inline-block hover:bg-opacity-90 transition-colors text-center"
+                    >
+                      Read Article
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
 
             {/* Call to Action */}
-            <div className="text-center">
-              <p className="mb-4">Want to learn more about the testing process and what to expect?</p>
-              <Link
-                href="/care-services"
+            <div className="text-center mt-8">
+              <a
+                href="/articles"
                 className="bg-[#e22226] text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors inline-block"
               >
-                Visit Our Care Services
-              </Link>
+                Browse more articles
+              </a>
             </div>
           </div>
+
+
         </div>
       </div>
 
       <FAQs />
+
+{/* Curved White Section */}
+  <div className="bg-transparent relative">
+        {/* Beyond Boundaries Section - Added more space on top */}
+        <div className="container mx-auto px-4 pt-8 pb-8 relative overflow-hidden">
+                {/* Call to Action: Get Tested */}
+          <div className="bg-[#e22226] rounded-2xl p-10 mt-20 flex flex-col items-center text-white text-center shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Take Charge of Your Health: Get Tested for HIV</h2>
+            <p className="max-w-xl mb-8 text-lg md:text-xl font-light">
+              Knowing your HIV status is a powerful step toward a healthier future. Testing is quick, confidential, and can make all the difference. Don’t wait—take action for yourself and your loved ones today.
+            </p>
+            <a
+              href="/care-services"
+              className="bg-white text-[#e22226] px-10 py-5 rounded-full text-xl font-bold shadow-md hover:bg-gray-100 transition-colors"
+            >
+              Get Tested Now
+            </a>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </main>

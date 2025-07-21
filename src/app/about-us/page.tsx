@@ -28,9 +28,16 @@ export default function About() {
       {/* Header */}
       <header className="bg-[#e22226] text-white">
         <NavBar />
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-center">Meet the Team!</h1>
-          <p className="text-lg text-center mt-22 -mb-10 max-w-4xl mx-auto italic">
+        <div className="container mx-auto px-4 py-12 flex flex-col items-center">
+          <Image 
+            src={`${basePath}/images/about-us.png`}
+            alt=""
+            width={500}
+            height={500}
+            className="w-100 h-auto"
+            priority
+          />
+          <p className="text-lg text-center -mb-10 max-w-4xl mx-auto italic">
             We're actually a local group of researchers from De La Salle-College of Saint Benilde. We provide information and insight about HIV as a disease and how it affects a person physically and mentally, along with preventative measures, where to find support and how to cope, and where to test and seek treatment against HIV. Our goal is to normalize the conversation of HIV for it is an ongoing epidemic in our generation, and to raise awareness along with destigmatizing the disease and people affected or at-risk of the disease.
           </p>
         </div>
@@ -109,18 +116,21 @@ export default function About() {
           className="px-6 py-20"
         >
           <div className="container max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-10 text-center text-bc-1">Mission-Vision Statements</h2>
-            
             {/* Mission Rectangle */}
             <div className="mb-10 overflow-hidden rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row">
-                <div className="bg-white p-8 md:w-1/2 flex items-center h-64">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4 text-bc-1">Mission</h3>
-                    <p className="text-gray-700">
-                      Beyond Boundaries seeks to inform, educate, and comfort the youth on the realities of HIV, its effects, and provide easy access to care services and treatment for those seeking it.
-                    </p>
-                  </div>
+                <div className="bg-white p-8 md:w-1/2 flex flex-col items-start justify-center">
+                  <Image 
+                    src={`${basePath}/images/mission.png`}
+                    alt="Mission"
+                    width={500}
+                    height={500}
+                    className="-mb-2 ml-0 md:ml-2 w-40 md:w-48 h-auto object-contain"
+                    priority
+                  />
+                  <p className="text-gray-700 text-base md:text-lg leading-relaxed md:pl-4 px-2 md:px-0 w-full break-words">
+                    Beyond Boundaries seeks to inform, educate, and comfort the youth on the realities of HIV, its effects, and provide easy access to care services and treatment for those seeking it.
+                  </p>
                 </div>
                 <div className="relative h-64 md:h-auto md:w-1/2">
                   <Image 
@@ -146,13 +156,18 @@ export default function About() {
                   />
                   <div className="absolute inset-0 bg-red-600 opacity-50"></div>
                 </div>
-                <div className="bg-white p-8 md:w-1/2 flex items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4 text-bc-1">Vision</h3>
-                    <p className="text-gray-700">
-                      Beyond Boundaries aims to be the light that exposes the reality of HIV and its support initiatives. Through the implementation of this project, we aim to normalize the talk about the disease resulting in minimizing the stigma that affects PLHIV. We also aim to promote inclusivity for the Gen-Z's who are afraid to talk about HIV, and those who want to seek help but simply are fearful.
-                    </p>
-                  </div>
+                <div className="bg-white p-8 md:w-1/2 flex flex-col items-end justify-center">
+                  <Image 
+                    src={`${basePath}/images/vision.png`}
+                    alt="Vision"
+                    width={500}
+                    height={500}
+                    className="-mb-2 mr-0 md:mr-2 w-40 md:w-48 h-auto object-contain"
+                    priority
+                  />
+                  <p className="text-gray-700 text-base md:text-lg leading-relaxed md:pr-4 px-2 md:px-0 w-full break-words text-right">
+                    Beyond Boundaries aims to be the light that exposes the reality of HIV and its support initiatives. Through the implementation of this project, we aim to normalize the talk about the disease resulting in minimizing the stigma that affects PLHIV. We also aim to promote inclusivity for the Gen-Z's who are afraid to talk about HIV, and those who want to seek help but simply are fearful.
+                  </p>
                 </div>
               </div>
             </div>
