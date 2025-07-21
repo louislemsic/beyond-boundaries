@@ -5,6 +5,8 @@ import Link from "next/link"
 import { CheckCircle, Search, ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
 import NavBar from "@/components/NavBar"
 import Footer from "@/components/Footer"
+import Image from "next/image"
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH
 
 export default function CareServicesPage() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null)
@@ -658,9 +660,16 @@ export default function CareServicesPage() {
       {/* Header */}
       <header className="bg-[#e22226] text-white">
         <NavBar />
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-center">HIV Care Services</h1>
-          <p className="text-lg text-center mt-4 max-w-2xl mx-auto">
+        <div className="container mx-auto px-4 py-12 flex flex-col items-center relative">
+          <Image 
+            src={`${basePath}/images/todonatest.png`}
+            alt=""
+            width={800}
+            height={800}
+            className="w-80 md:w-150 mx-2 h-auto rotate-[-6deg] absolute left-1/2 -translate-x-1/2 md:-top-25 -top-3 z-10"
+            priority
+          />
+          <p className="text-lg text-center max-w-2xl mx-auto relative z-20 pt-48 md:pt-64">
             From testing to treatment, we provide comprehensive information about HIV care services and support programs
             available to you.
           </p>

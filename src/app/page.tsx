@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MapPin } from "lucide-react"
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import YouTubeShort from "@/components/YouTubeShort"
 import ShortVideoModal from "@/components/ShortVideoModal"
 import MediaPlayer from "@/components/MediaPlayer"
 import FAQs from "@/components/FAQs";
+import Image from "next/image";
 
 const videos = [
   {
@@ -313,8 +313,15 @@ export default function Home() {
         <div className="container mx-auto px-4 pt-8 pb-8 relative overflow-hidden">
                 {/* Call to Action: Get Tested */}
           <div className="bg-[#e22226] rounded-2xl p-10 mt-20 flex flex-col items-center text-white text-center shadow-lg">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Take Charge of Your Health: Get Tested for HIV</h2>
-            <p className="max-w-xl mb-8 text-lg md:text-xl font-light">
+            <Image 
+                src={`${basePath}/images/know-your-status.png`}
+                alt=""
+                width={500}
+                height={500}
+                className="w-75 h-auto rotate-[-6deg]"
+                priority
+              />
+            <p className="max-w-xl mb-8 mt-8 text-lg md:text-xl font-light">
               Knowing your HIV status is a powerful step toward a healthier future. Testing is quick, confidential, and can make all the difference. Don’t wait—take action for yourself and your loved ones today.
             </p>
             <a
